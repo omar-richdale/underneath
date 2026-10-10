@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Underneath</title>
+<meta name="description" content="A three-minute autobiographical film for Omar Oumessaoud, built from 24 pieces of evidence that spell his name.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Fraunces:ital,opsz,wght@1,9..144,300&family=IBM+Plex+Mono:wght@400;500;600&family=Special+Elite&display=swap">
+<style>
+/* Layout: a case file. The film on top, then the 24 exhibits grouped by the letter they build, then the name they spell. One dark look, by choice. */
+:root {
+  color-scheme: dark;
+  --ink: #0b0a09;
+  --raise: #15120f;
+  --rule: #2c2621;
+  --paper: #ece5d5;
+  --dim: #a0978a;
+  --faint: #6a6258;
+  --thread: #c22a31;
+  --phos: #7df59c;
+  --amber: #ffb23e;
+  --cold: #cfe0ff;
+  --sand: #d9b47c;
+  --brass: #c9a24a;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --f-type: "Special Elite", "Courier New", Courier, monospace;
+  --f-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 64ch;
+}
+* { box-sizing: border-box; }
+html { background: var(--ink); }
+body {
+  background: var(--ink); color: var(--paper);
+  font-family: var(--f-display); font-variation-settings: "wdth" 100;
+  font-size: 17px; line-height: 1.55; margin: 0;
+  padding-inline: var(--gutter); padding-block: 0 72px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--paper); }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.wrap { max-width: 1240px; margin-inline: auto; }
+.mono { font-family: var(--f-mono); font-size: 12.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--dim); }
+
+/* top line */
+.topline { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: baseline; padding-block: 22px 18px; }
+.topline .who { font-family: var(--f-serif); font-style: italic; font-weight: 300; font-size: 19px; color: var(--paper); text-transform: none; letter-spacing: 0; }
+
+/* player */
+.screen { position: relative; aspect-ratio: 16 / 9; width: 100%; max-width: 100%; background: #000; overflow: hidden; border-radius: 3px; box-shadow: 0 0 0 1px var(--rule), 0 30px 80px -30px rgba(0,0,0,0.9); }
+.screen video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.start { position: absolute; inset: 0; display: grid; place-items: end start; border: 0; margin: 0; padding: clamp(12px, 3vw, 32px); background: radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.6) 100%); cursor: pointer; color: var(--paper); }
+.start span { display: inline-flex; align-items: center; gap: 14px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 20px 14px 16px; background: rgba(8,7,6,0.7); border: 1px solid rgba(236,229,213,0.25); border-radius: 2px; }
+.start i { width: 10px; height: 10px; border-radius: 50%; background: var(--paper); box-shadow: 0 0 0 4px rgba(236,229,213,0.1), 0 0 18px 4px rgba(236,229,213,0.45); }
+.start:hover span, .start:focus-visible span { border-color: var(--amber); }
+@media (prefers-reduced-motion: no-preference) {
+  .start i { animation: blink 1.05s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0.25; } }
+}
+
+/* chapters under the film */
+.scrub { margin-top: 14px; display: grid; gap: 8px; }
+.chapters { position: relative; display: flex; height: 16px; cursor: pointer; gap: 2px; }
+.chapters span { display: block; height: 3px; background: var(--c); opacity: 0.8; min-width: 0; }
+.head { position: absolute; top: -5px; width: 2px; height: 13px; background: var(--paper); left: 0; pointer-events: none; box-shadow: 0 0 10px rgba(236,229,213,0.6); }
+.readout { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; font-variant-numeric: tabular-nums; }
+.readout b { font-weight: 500; color: var(--paper); }
+.readout .ev b { color: var(--thread); }
+
+/* title */
+.title { padding-block: clamp(48px, 9vw, 110px) 16px; }
+.title h1 { margin: 0; font-weight: 900; line-height: 0.86; letter-spacing: -0.01em; font-variation-settings: "wdth" 125; font-size: clamp(52px, 12.6vw, 182px); text-wrap: balance; }
+.lede { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 56px; margin-top: 40px; align-items: start; }
+.lede p { margin: 0; max-width: var(--measure); font-size: clamp(17px, 1.6vw, 20px); }
+.lede blockquote { margin: 0; font-family: var(--f-serif); font-style: italic; font-weight: 300; font-size: clamp(22px, 2.4vw, 31px); line-height: 1.3; }
+.lede blockquote cite { display: block; margin-top: 12px; font-family: var(--f-mono); font-style: normal; font-size: 12.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--dim); }
+@media (max-width: 760px) { .lede { grid-template-columns: minmax(0, 1fr); } }
+
+/* sections */
+.sect { margin-top: clamp(72px, 10vw, 130px); }
+.sect > header { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 18px; margin-bottom: 30px; }
+.sect h2 { margin: 0; font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; font-variation-settings: "wdth" 112; text-wrap: balance; }
+.sect .note { max-width: var(--measure); margin: 0 0 34px; color: var(--dim); }
+
+/* exhibits, grouped by the letter they build */
+.letter { display: grid; grid-template-columns: clamp(64px, 9vw, 120px) minmax(0, 1fr); gap: 20px clamp(16px, 3vw, 40px); padding-block: 26px; border-top: 1px solid var(--rule); }
+.letter > .glyph { font-weight: 900; font-variation-settings: "wdth" 125; font-size: clamp(64px, 9vw, 120px); line-height: 0.8; color: var(--paper); }
+.letter > .glyph small { display: block; margin-top: 14px; font-family: var(--f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; color: var(--dim); font-variation-settings: normal; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 22px; }
+@media (max-width: 980px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .letter { grid-template-columns: minmax(0, 1fr); } .cards { grid-template-columns: minmax(0, 1fr); } }
+.exhibit { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.exhibit button { display: block; padding: 0; border: 0; margin: 0; background: none; cursor: pointer; position: relative; }
+.exhibit img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 772 / 618; transform: rotate(var(--r, 0deg)); box-shadow: 4px 8px 18px rgba(0,0,0,0.6); transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+.exhibit button:hover img, .exhibit button:focus-visible img { transform: rotate(0deg) scale(1.02); }
+.exhibit button::before { content: ""; position: absolute; z-index: 1; top: -5px; left: calc(50% - 6px); width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff3cf 0 12%, var(--brass) 42%, #5b3a10 100%); box-shadow: 2px 3px 4px rgba(0,0,0,0.7); }
+.exhibit .meta { display: flex; justify-content: space-between; gap: 10px; font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--dim); font-variant-numeric: tabular-nums; }
+.exhibit .meta b { color: var(--paper); font-weight: 500; }
+.exhibit p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--paper); max-width: 46ch; }
+
+/* the name */
+.spell { display: grid; gap: 18px; }
+.spell figure { margin: 0; position: relative; }
+.spell img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 3px; box-shadow: 0 0 0 1px var(--rule); }
+.spell .row { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: start; justify-content: space-between; }
+.spell .row p { margin: 0; max-width: var(--measure); }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; border: 1px solid var(--thread); background: transparent; color: var(--paper); font-family: var(--f-mono); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; cursor: pointer; }
+.btn:hover, .btn:focus-visible { background: var(--thread); }
+
+/* the way home: one line per scale */
+.home { list-style: none; margin: 0; padding: 0; display: grid; }
+.home li { display: grid; grid-template-columns: minmax(130px, 220px) minmax(0, 1fr); gap: 4px 24px; align-items: baseline; padding-block: 14px; border-bottom: 1px solid var(--rule); }
+.home li span { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+.home li b { font-weight: 700; font-variation-settings: "wdth" 112; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: 0.04em; line-height: 1.2; text-wrap: balance; }
+.home li.last b { color: var(--amber); }
+@media (max-width: 560px) { .home li { grid-template-columns: minmax(0, 1fr); } }
+
+/* facts */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 0; border-top: 1px solid var(--rule); margin: 0; }
+.facts div { padding: 18px 18px 20px 0; border-bottom: 1px solid var(--rule); min-width: 0; }
+.facts dt { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; }
+.facts dd { margin: 0; font-size: 21px; font-weight: 600; font-variation-settings: "wdth" 108; line-height: 1.25; }
+.facts dd small { display: block; font-size: 14px; font-weight: 400; color: var(--dim); font-variation-settings: "wdth" 100; margin-top: 4px; }
+.credits { margin-top: 26px; max-width: var(--measure); font-size: 14px; color: var(--dim); }
+
+footer { margin-top: clamp(72px, 10vw, 120px); display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; align-items: center; border-top: 1px solid var(--rule); padding-top: 20px; }
+footer .cur { display: inline-block; width: 8px; height: 14px; background: var(--paper); margin-right: 10px; vertical-align: -2px; }
+</style>
+
+<div class="wrap">
+  <div class="topline">
+    <span class="mono who">An autobiographical film for Omar Oumessaoud</span>
+    <span class="mono">3:11 · 1920 × 1080 · 60 fps · original score</span>
+  </div>
+
+  <section aria-label="The film">
+    <div class="screen">
+      <video id="film" playsinline preload="metadata" poster="stills/s168_8.jpg" aria-label="Underneath, a three-minute film"></video>
+      <button class="start" id="start" type="button"><span><i aria-hidden="true"></i>Play with sound</span></button>
+    </div>
+    <div class="scrub">
+      <div class="chapters" id="chapters" role="slider" tabindex="0" aria-label="Seek through the film" aria-valuemin="0" aria-valuemax="191.2" aria-valuenow="0"><span class="head" id="head"></span></div>
+      <div class="readout mono">
+        <span><b id="tc">00:00</b> / 03:11 · <b id="chap">The light</b></span>
+        <span class="ev">evidence <b id="ev">00</b> / 24</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="title">
+    <h1>UNDERNEATH</h1>
+    <div class="lede">
+      <blockquote>“I need to understand what is happening underneath.”<cite>The one instinct the whole film follows</cite></blockquote>
+      <p>Physics before it was assigned. A computer that stopped being his, and the years spent learning why. Networks, cybersecurity, digital forensics, friends, football, chess, westerns, one lucky interview, and the intelligent systems he builds from the ground up. Every chapter ends with a photograph that becomes evidence. At the end, all of it is on one board, and the board spells his name.</p>
+    </div>
+  </section>
+
+  <section class="sect" aria-labelledby="h-ev">
+    <header><h2 id="h-ev">The evidence, in the order it was lived</h2><span class="mono">Select an exhibit to play from there</span></header>
+    <p class="note">Each print is a real frame of the film, photographed at the moment it was captured. Six exhibits sit on each letter of the name, so this list is also the order the red thread follows on the board.</p>
+    <div id="letters"></div>
+  </section>
+
+  <section class="sect spell" aria-labelledby="h-name">
+    <header><h2 id="h-name">What the evidence spells</h2><span class="mono">02:44 – 02:50</span></header>
+    <figure><img src="stills/s168_8.jpg" alt="Hundreds of photographs, notes, tags and red threads on a dark cork board, arranged so that they spell OMAR" width="1920" height="1080"></figure>
+    <div class="row">
+      <p>The walk across the board runs backwards from the latest evidence, the way an investigator works. That failure built this skill. That music came back years later. That person led to that interest. Then the camera pulls back. About 350 smaller pieces fill out the strokes: crops of the prints, handwritten notes, time tags, waveforms, and the threads that tie each one to its exhibit.</p>
+      <button class="btn" type="button" data-t="156">Play the board</button>
+    </div>
+  </section>
+
+  <section class="sect" aria-labelledby="h-home">
+    <header><h2 id="h-home">The way home</h2><span class="mono">Through the O, out to the edge, and back</span></header>
+    <ul class="home">
+      <li><span>Leaving</span><b>The universe does not owe us an explanation.</b></li>
+      <li><span>Universe</span><b>We look anyway.</b></li>
+      <li><span>Galaxy</span><b>Curiosity over certainty.</b></li>
+      <li><span>Earth</span><b>Understand before you assume.</b></li>
+      <li><span>Morocco at night</span><b>Test before you believe.</b></li>
+      <li><span>A room</span><b>Build instead of only consuming.</b></li>
+      <li><span>A screen</span><b>Choose your own path.</b></li>
+      <li class="last"><span>A cursor</span><b>Keep looking.</b></li>
+    </ul>
+  </section>
+
+  <section class="sect" aria-labelledby="h-made">
+    <header><h2 id="h-made">How it was made</h2><span class="mono">No stock footage, samples or loops</span></header>
+    <dl class="facts">
+      <div><dt>Frames</dt><dd>11,472<small>each one a pure function of time, rendered in code</small></dd></div>
+      <div><dt>Motion blur</dt><dd>Up to 12 sub-frames<small>averaged over a 180° shutter</small></dd></div>
+      <div><dt>Score</dt><dd>Synthesized from scratch<small>guitars, whistle, choir, drums and synths; tempo changes from 60 to 120 BPM</small></dd></div>
+      <div><dt>One clock</dt><dd>One beat sheet<small>the music and the picture read the same 199 cues</small></dd></div>
+      <div><dt>The board</dt><dd>24 exhibits, ~350 fragments<small>laid out along the strokes of four letters</small></dd></div>
+      <div><dt>Silences</dt><dd>Five<small>the opening, the frozen screen, the interview pause, the unfinished part and the end</small></dd></div>
+    </dl>
+    <p class="credits">Earth, the Maghreb at night and the infrastructure map use NASA's Blue Marble and Black Marble imagery, and the late-night screen shows the Hubble eXtreme Deep Field (NASA, ESA). All are public domain. The photographs on the wall, the slate and the board, the laptop, and the two PES clips are Omar’s own. The galaxy, the cosmic web and everything else are procedural.</p>
+  </section>
+
+  <footer>
+    <span class="mono"><span class="cur" aria-hidden="true"></span>what’s underneath?</span>
+    <span class="mono">Made for Omar with Claude Code</span>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const DUR = 191.2;
+  const video = document.getElementById('film');
+  const start = document.getElementById('start');
+  const head = document.getElementById('head');
+  const chaptersEl = document.getElementById('chapters');
+  const tcEl = document.getElementById('tc'), chapEl = document.getElementById('chap'), evEl = document.getElementById('ev');
+
+  // chapters: [start, name, colour token]
+  const CH = [
+    [0, 'The light', '--cold'], [12.8, 'High school', '--sand'], [22.4, 'Late nights', '--amber'], [28.8, 'First computer incident', '--phos'],
+    [38.4, 'Networks', '--phos'], [45.6, 'University', '--phos'], [50.4, 'Practice', '--phos'], [55.2, 'Digital forensics', '--thread'],
+    [64.8, 'Friends', '--amber'], [67.2, 'No. 9', '--amber'], [72.0, 'Games', '--amber'], [84.0, 'Friendship & time', '--amber'],
+    [88.8, 'Year off', '--sand'], [93.6, 'Music', '--amber'], [100.8, 'Westerns', '--sand'], [108.8, 'The interview', '--sand'],
+    [116.0, 'The project', '--cold'], [122.0, 'First job', '--cold'], [124.0, 'The work', '--cold'], [132.0, 'New scale', '--cold'],
+    [136.0, 'Ambition', '--dim'], [146.0, 'Useful', '--cold'], [152.0, 'Experiments', '--cold'], [156.0, 'The board', '--thread'],
+    [170.4, 'The way home', '--cold'], [183.6, 'The cursor', '--paper'],
+  ];
+  // exhibits: [n, label, capture time, chapter start to play from, note]
+  const EX = [
+    [1, 'A star, 8.6 years ago', 4.6, 0, 'One point of light. It left its star years before it reached the person who looked up.'],
+    [2, 'Not on the exam', 18.2, 12.8, 'High school. A ball rolls off the textbook’s diagram, through the red curriculum line. The equations nobody assigned escape the page.'],
+    [3, '02:14 AM', 27.6, 22.4, 'A screen, a lamp, the deepest image of the universe. One question, then another. No plan.'],
+    [4, 'game_setup.exe', 32.4, 28.8, 'A “game installer” that stopped at 99 %. He did not know what had happened, and that bothered him.'],
+    [5, 'First Linux shell', 35.8, 28.8, 'Safe mode, a reinstall, then a terminal. The opaque box opens into layers.'],
+    [6, 'One request, followed', 44.9, 38.4, 'From a phone to a server and back. The internet stopped being magic and became a system.'],
+    [7, 'The path I chose', 49.8, 45.6, 'Networking was the expected rail. Earlier evidence pulled the line toward cybersecurity.'],
+    [8, 'Top 2% worldwide', 54.6, 50.4, 'Labs, courses, CTFs and friends to compete with, on the laptop he learned most of it on, until the rank read top 2 % worldwide.'],
+    [9, 'The first timeline', 61.8, 55.2, 'Digital forensics: traces found out of order, threaded by time into a story.'],
+    [10, 'Youssef · Saad', 66.6, 64.8, 'The same network diagram with different nodes. Friends, no agenda.'],
+    [11, 'No. 9', 71.4, 67.2, 'Youssef makes the space; the curve goes into the corner.'],
+    [12, 'PES 2016, with Saad', 80.1, 72.0, 'The curve again, on a phone (PES 21) and then on a TV with Saad (PES 2016, Xbox 360). Counter-Strike, PES and PUBG Mobile, about 2,000 hours each. Not the stats: the time together.'],
+    [13, 'Same rhythm', 88.4, 84.0, 'Years apart, then straight back in phase. Some distances aren’t measured in time.'],
+    [14, '1. d4 d5 2. c4', 92.1, 88.8, 'The year off: chess with Saad, after The Queen’s Gambit.'],
+    [15, 'Pattern + feeling', 99.6, 93.6, 'A string, a waveform, traffic, stars, a staff, a record: rock & roll to western scores.'],
+    [16, 'The horizon', 104.6, 100.8, 'A small figure in a big land, and a whistle. The horizon turns out to be a waveform.'],
+    [17, 'Morricone', 115.2, 108.8, 'In an interview the western avatar was recognised. Two unrelated timelines touched one node.'],
+    [18, '4 days → Monday', 121.6, 116.0, 'A detection model, from data to presentation, in four days.'],
+    [19, 'From watching to building', 123.6, 122.0, 'The thread from the kid at 02:14 lays a foundation stone. The first job.'],
+    [20, 'From the ground up', 131.4, 124.0, 'Building intelligent systems from the ground up: machines, networks, data, models, and a heavy block carved down to only the mechanism it needs.'],
+    [21, 'Same instinct, new scale', 135.5, 132.0, 'The camera pulls back to a whole district, and the one request from years before crosses it.'],
+    [22, 'Unfinished', 144.2, 136.0, 'Something ambitious grew from the top. It worked once, grew too fast, almost lived, and stopped. It stays on the structure, grey.'],
+    [23, 'Making machines useful', 151.8, 146.0, 'The rest of it comes alive: work moving through every floor, a broken link found and fixed, the district lighting up.'],
+    [24, 'Question → build', 155.4, 152.0, 'A loop rather than a line: question, experiment, failure, insight, new question, build.'],
+  ];
+  const fmt = (t) => { const m = Math.floor(t / 60), s = Math.floor(t % 60); return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`; };
+
+  // ---- chapter bar
+  CH.forEach(([t0, name, col], i) => {
+    const t1 = i + 1 < CH.length ? CH[i + 1][0] : DUR;
+    const s = document.createElement('span');
+    s.style.flex = `${t1 - t0} 1 0`;
+    s.style.setProperty('--c', `var(${col})`);
+    s.title = `${fmt(t0)} · ${name}`;
+    chaptersEl.insertBefore(s, head);
+  });
+
+  // ---- exhibits grouped by letter
+  const lettersEl = document.getElementById('letters');
+  'OMAR'.split('').forEach((ch, li) => {
+    const sec = document.createElement('div');
+    sec.className = 'letter';
+    const g = document.createElement('div');
+    g.className = 'glyph';
+    g.innerHTML = `${ch}<small>${String(li * 6 + 1).padStart(2, '0')}–${String(li * 6 + 6).padStart(2, '0')}</small>`;
+    sec.appendChild(g);
+    const cards = document.createElement('div');
+    cards.className = 'cards';
+    EX.slice(li * 6, li * 6 + 6).forEach(([n, label, tc, from, note]) => {
+      const chap = CH.filter((c) => c[0] <= tc).pop()[1];
+      const el = document.createElement('article');
+      el.className = 'exhibit';
+      const r = ((n * 37) % 7 - 3) * 0.5;
+      el.innerHTML = `<button type="button" data-t="${from}" aria-label="Play from ${chap}, exhibit ${n}"><img src="exhibits/e${String(n).padStart(2, '0')}.jpg" alt="Exhibit ${n}, ${label}" width="772" height="618" style="--r:${r}deg"></button>
+        <div class="meta"><span><b>Exhibit ${String(n).padStart(2, '0')}</b> · ${chap}</span><span>${fmt(tc)}</span></div>
+        <p>${note}</p>`;
+      cards.appendChild(el);
+    });
+    sec.appendChild(cards);
+    lettersEl.appendChild(sec);
+  });
+
+  // ---- source: fragmented MP4 parts stitched with Media Source Extensions; one smaller file otherwise
+  let PARTS = [];
+  const MIME = 'video/mp4; codecs="avc1.64002a, mp4a.40.2"';
+  let usingFallback = false;
+  function fallback() {
+    if (usingFallback) return;
+    usingFallback = true;
+    const t = video.currentTime || 0, wasPlaying = !video.paused;
+    video.removeAttribute('src');
+    video.src = 'film-small.mp4';
+    video.load();
+    video.addEventListener('loadedmetadata', () => { if (t) video.currentTime = t; if (wasPlaying) video.play().catch(() => {}); }, { once: true });
+  }
+  function appendTo(sb, buf) {
+    return new Promise((res, rej) => {
+      const ok = () => { sb.removeEventListener('error', bad); res(); };
+      const bad = () => { sb.removeEventListener('updateend', ok); rej(new Error('append failed')); };
+      sb.addEventListener('updateend', ok, { once: true });
+      sb.addEventListener('error', bad, { once: true });
+      sb.appendBuffer(buf);
+    });
+  }
+  async function setup() {
+    try { PARTS = (await (await fetch('parts.json')).json()).parts; } catch (e) { fallback(); return; }
+    const MS = window.MediaSource;
+    if (!(MS && typeof MS.isTypeSupported === 'function' && MS.isTypeSupported(MIME))) { fallback(); return; }
+    try {
+      const ms = new MS();
+      video.src = URL.createObjectURL(ms);
+      ms.addEventListener('sourceopen', async () => {
+        try {
+          ms.duration = DUR;
+          const sb = ms.addSourceBuffer(MIME);
+          // fetch ahead, append in order
+          const pending = PARTS.map((p) => fetch(p).then((r) => { if (!r.ok) throw new Error(p); return r.arrayBuffer(); }));
+          for (const p of pending) await appendTo(sb, await p);
+          if (ms.readyState === 'open') ms.endOfStream();
+        } catch (e) { fallback(); }
+      }, { once: true });
+      setTimeout(() => { if (!usingFallback && video.readyState < 1) fallback(); }, 12000);
+    } catch (e) { fallback(); }
+  }
+  setup();
+  video.addEventListener('error', () => { if (!usingFallback) fallback(); });
+
+  // ---- playback
+  function play(t) {
+    start.hidden = true;
+    video.controls = true;
+    video.muted = false;
+    if (typeof t === 'number') {
+      const seek = () => { video.currentTime = Math.min(DUR - 0.1, Math.max(0, t)); };
+      if (video.readyState >= 1) seek(); else video.addEventListener('loadedmetadata', seek, { once: true });
+    }
+    const p = video.play();
+    if (p && p.catch) p.catch(() => { start.hidden = false; });
+  }
+  start.addEventListener('click', () => play());
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-t]');
+    if (!b) return;
+    play(parseFloat(b.dataset.t));
+    document.querySelector('.screen').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  });
+  chaptersEl.addEventListener('click', (e) => {
+    const r = chaptersEl.getBoundingClientRect();
+    play(Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * DUR);
+  });
+  chaptersEl.addEventListener('keydown', (e) => {
+    const t = video.currentTime || 0;
+    const i = CH.findIndex((c, k) => k + 1 === CH.length || CH[k + 1][0] > t + 0.01);
+    if (e.key === 'ArrowRight') { e.preventDefault(); play(CH[Math.min(CH.length - 1, i + 1)][0]); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); play(CH[Math.max(0, (t - CH[i][0] < 1.5 ? i - 1 : i))][0]); }
+  });
+
+  // ---- readout
+  function tick() {
+    const t = video.currentTime || 0;
+    head.style.left = `calc(${(t / DUR) * 100}% - 1px)`;
+    chaptersEl.setAttribute('aria-valuenow', t.toFixed(1));
+    tcEl.textContent = fmt(t);
+    chapEl.textContent = CH.filter((c) => c[0] <= t + 1e-3).pop()[1];
+    evEl.textContent = String(EX.filter((x) => x[2] <= t).length).padStart(2, '0');
+  }
+  let raf = 0;
+  const loop = () => { tick(); raf = video.paused ? 0 : requestAnimationFrame(loop); };
+  video.addEventListener('play', () => { if (!raf) raf = requestAnimationFrame(loop); });
+  video.addEventListener('seeked', tick);
+  video.addEventListener('timeupdate', () => { if (!raf) tick(); });
+  video.addEventListener('ended', () => { start.hidden = false; start.querySelector('span').lastChild.textContent = 'Play again'; });
+  tick();
+})();
+</script>
